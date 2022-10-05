@@ -12,8 +12,10 @@ var hoursNow = today.getHours();
 var greetings = "";
 if (hoursNow <= 12){
   greetings = "Good Morning";
+}else if (hoursNow <= 18){
+  greetings = "Good Afternoon";
 }else{
-  greetings = "Good Evening";
+  greetings= "Good Evening";
 }
 
 
