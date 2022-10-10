@@ -77,6 +77,9 @@
             <h1>Window and document object </h1>
             <p> Try alert, open, location, url </p>
             <script>
+                document.write(window.location.href);
+                document.write(document.last);
+                //window.location.href = "https://www.rocketleague.com";
 
             </script>
 
@@ -84,7 +87,7 @@
 
         <div class="practice">
             <h1> Get textcontent of an element </h1>
-            <p>Perform arithmetic operation on <span id="num1"> 4 </span> and <span id="num2">5 </span> </p>
+            <p>Perform arithmetic operation on <span id="num1"> 8 </span> and <span id="num2"> 12 </span> </p>
             <p>Result:
                 <script src="js/arith.js"></script>
             </p>
@@ -93,11 +96,25 @@
 
         <div class="practice">
             <h1> Get innerHTML of an elemnt</h1>
-            <p id="p1"> Paragraph Number One </p>
-            <p id="p2"> Paragraph Number two </p>
+            <p id="p1" onclick="changeit();"> Paragraph Number One </p>
+            <p id="p2" onmouseover="changeit2();" onmouseout="changeit3();"> Paragraph Number two </p>
             <p id="p3"> Paragraph Number three </p>
-            <p>Please write JavaScript code to change the content of each paragraph.​
+            <p><input type="text" id="myname"></p>
+            <p>Please write JavaScript code to change the content of each paragraph.
             <p>
+                <script>
+                    //event handler
+                    function changeit(){
+                        document.getElementById('p1').textContent = "I did it!";
+                        document.getElementById('myname').value = "I knew it!";
+                    }
+                    function changeit2(){
+                        document.getElementById('p2').textContent = "I did it by hovering";
+                    }
+                    function changeit3(){
+                        document.getElementById('p2').textContent = "Paragraph Number Two";
+                    }
+                </script>
 
 
         </div>
@@ -106,14 +123,57 @@
             <h1> Get input from a form </h1>
             <p> Please enter your numbers </p>
             <script>
-                function calculate() {
-
-
+                function calculateAdd() {
+                    var n1 = parseInt(document.getElementsByName('num1')[0].value);
+                    var n2 = parseInt(document.getElementsByName('num2')[0].value);
+                    //debugging
+                    console.log("n1= "+n1);
+                    var ans = n1 + n2;
+                    document.getElementById('result').textContent = "The answer is "+ans;
+                }
+                function calculateSub() {
+                    var n1 = parseInt(document.getElementsByName('num1')[0].value);
+                    var n2 = parseInt(document.getElementsByName('num2')[0].value);
+                    //debugging
+                    console.log("n1= "+n1);
+                    var ans2 = n1 - n2;
+                    document.getElementById('result2').textContent = "The answer is "+ans2;
+                }
+                function calculateMult() {
+                    var n1 = parseInt(document.getElementsByName('num1')[0].value);
+                    var n2 = parseInt(document.getElementsByName('num2')[0].value);
+                    //debugging
+                    console.log("n1= "+n1);
+                    var ans3 = n1 * n2;
+                    document.getElementById('result3').textContent = "The answer is "+ans3;
+                }
+                function calculateDiv() {
+                    var n1 = parseInt(document.getElementsByName('num1')[0].value);
+                    var n2 = parseInt(document.getElementsByName('num2')[0].value);
+                    //debugging
+                    console.log("n1= "+n1);
+                    var ans4 = n1 / n2;
+                    document.getElementById('result4').textContent = "The answer is "+ans4;
                 }
             </script>
             <p> <input type="text" name="num1" /> + <input type="text" name="num2">
-                <input type="button" value="=" onclick="calculate();">
+                <input type="button" value="=" onclick="calculateAdd();">
                 <label id="result"> ? </label>
+            </p>
+
+            <p> <input type="text" name="num1" /> - <input type="text" name="num2">
+                <input type="button" value="=" onclick="calculateSub();">
+                <label id="result2"> ? </label>
+            </p>
+
+            <p> <input type="text" name="num1" /> * <input type="text" name="num2">
+                <input type="button" value="=" onclick="calculateMult();">
+                <label id="result3"> ? </label>
+            </p>
+
+            <p> <input type="text" name="num1" /> / <input type="text" name="num2">
+                <input type="button" value="=" onclick="calculateDiv();">
+                <label id="result4"> ? </label>
             </p>
 
         </div>
@@ -137,6 +197,20 @@
                     </label>
                 </p>
             </form>
+
+            <script>
+                //event handler
+                function welcomemessage(){
+                    window.alert("Works!!!");
+                }
+
+
+                //event ---> event handler
+                var fE = document.getElementById('cName');
+                fE.addEventListener('blur', welcomemessage, false);
+
+            </script>
+
 
         </div>
 
