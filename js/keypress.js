@@ -12,5 +12,5 @@ function showKey(e){
 
 function showPosition(e){
     console.log("The position is "+e.pageX+", "+e.pageY);
-    document.getElementById('lastKey').textContent="The position is "+e.pageX+", "+e.pageY;
+    $('#lastKey').text=("The position is "+e.pageX+", "+e.pageY);
 }
