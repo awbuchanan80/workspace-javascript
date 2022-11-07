@@ -30,8 +30,8 @@ function reservation(){
 
 function displayR(){
     $("form").append("<table>");
-    for(var i in displayR){
-        var theguest = displayR[i];
+    for(var i in guestgroup){
+        var theguest = guestgroup[i];
         var row = "<tr><td>"+theguest.name+"</td>"+"<td>"+theguest.numberofGuest+"</td>"+"<td>"+theguest.checkin+"</td>"+"<td>"+theguest.checkout+"</td>"+"<td>"+theguest.roomNo+"</td></tr>";
         $("table").append(row);
     }
