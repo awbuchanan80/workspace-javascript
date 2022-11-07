@@ -13,9 +13,15 @@ $(function(){
     $('#submit').click(reservation);
 })
 
+var guestgroup = new Array();
 function reservation(){
     var guest = {
         name: $('#name').val(),
-        numberofGuest: $('#number').val()
+        numberofGuest: $('#numberofguest').val(),
+        checkIn: $('#checkin').val(),
+        checkOut: $('#checkout').val(),
+        roomNo: $('#roomNo').val()
     };
+    guestgroup.push(guest);
+    console.log(guestgroup);
 }
